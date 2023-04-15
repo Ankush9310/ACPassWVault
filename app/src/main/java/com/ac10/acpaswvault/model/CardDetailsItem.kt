@@ -11,4 +11,5 @@ data class CardDetailsItem (
     var cardNumber:String,
     var cardExpiryMonth:String,
     var cardExpiryYear:String,
-    var cardCVV:String)
+    var cardCVV:String
+    )

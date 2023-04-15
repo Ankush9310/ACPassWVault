@@ -10,4 +10,5 @@ data class LoginDetailsItem (
     var loginEmail:String,
     var loginPassword:String,
     var loginNotes:String,
+    var loginWebsite : String,
     var loginCategory:String)

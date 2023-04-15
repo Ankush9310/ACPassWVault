@@ -1,18 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.MainActivity">
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawerLayout"
+    android:layout_height="match_parent">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            app:menu_colorNormal="@color/colorAccent"
+            app:menu_colorPressed="#6B9CE1"
+            app:menu_colorRipple="#6B9CE1"
+            android:id="@+id/floatingMenu"
+            android:layout_margin="25dp">
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_label="Cards"
+                app:fab_colorNormal="#74A1E1"
+                app:fab_colorPressed="#74A1E1"
+                app:fab_colorRipple="#74A1E1"
+                android:src="@drawable/ic_credit_card_black_24dp"
+                app:fab_size="mini"
+                android:id="@+id/cardsDetails"/>
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_label="Login"
+                app:fab_size="mini"
+                app:fab_colorNormal="#74A1E1"
+                app:fab_colorPressed="#74A1E1"
+                android:src="@drawable/ic_desktop_windows_black_24dp"
+                app:fab_colorRipple="#74A1E1"
+                android:id="@+id/loginDetails"/>
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_size="mini"
+                app:fab_colorNormal="#74A1E1"
+                app:fab_colorPressed="#74A1E1"
+                app:fab_colorRipple="#74A1E1"
+                android:src="@drawable/ic_account_balance_black_24dp"
+                app:fab_label="Bank Details"
+                android:id="@+id/bankDetails"/>
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/navigation_view"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start|left"
+        app:menu="@menu/menu_drawer"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>

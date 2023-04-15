@@ -12,13 +12,13 @@ interface LoginDao {
     @Insert
     fun insertLoginDetails(loginDetails : LoginDetailsItem)
 
-    @Query("DELETE FROM LoginDetailsItem WHERE id = :id")
+    @Query("DELETE FROM 'LoginDetailsItem' WHERE 'id' = :id")
     fun deleteLoginDetails(id : String)
 
-    @Query("SELECT * FROM LoginDetailsItem")
+    @Query("SELECT * FROM 'LoginDetailsItem'")
     fun getAllLoginDetails() : LiveData<List<LoginDetailsItem>>
 
-    @Query("SELECT * FROM LoginDetailsItem WHERE loginCategory = :category")
+    @Query("SELECT * FROM 'LoginDetailsItem' WHERE 'loginCategory' = :category")
     fun getCategoryLoginDetails(category : String) : LiveData<List<LoginDetailsItem>>
 
 }

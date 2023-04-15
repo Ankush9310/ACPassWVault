@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ACPasWVault</string>
+    <string name="your_secure_password_appears_here">Your secure password appears here</string>
+    <string name="settings">Settings</string>
+    <string name="abcd_gmail_com">abcd@gmail.com</string>
+    <string name="google">Google</string>
+    <string name="email_or_username">Email or UserName</string>
 </resources>

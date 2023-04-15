@@ -12,10 +12,10 @@ interface BankDao {
     @Insert
     fun insertBankDetails(bankDetails:BankDetailsItem)
 
-    @Query ("DELETE FROM BankDetailsTable WHERE bankAccNumber = :accNumber")
+    @Query ("DELETE FROM 'BankDetailsTable' WHERE 'bankAccNumber' = :accNumber")
     fun deleteBankDetails(accNumber:Long)
 
-    @Query ("SELECT * FROM BankDetailsTable")
+    @Query ("SELECT * FROM 'BankDetailsTable'")
     fun getAllBankDetails():LiveData<List<BankDetailsItem>>
 
 

@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ac10.acpaswvault.databinding.BankListItemBinding
 import com.ac10.acpaswvault.model.BankDetailsItem
-import dagger.hilt.android.WithFragmentBindings
+import com.ac10.acpaswvault.ui.dialog.BankDialog
 
 class BankDetailsAdapter(
     private var context: Context?,
-    private var list: List<BankDetailsAdapter>,
+    private var list: List<BankDetailsItem>,
     private var fragmentManager: FragmentManager
 ): RecyclerView.Adapter<BankDetailsAdapter.BankDetailsViewHolder>() {
 
